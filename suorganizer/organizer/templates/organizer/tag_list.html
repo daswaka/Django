@@ -1,0 +1,29 @@
+{% extends parent_template|default:"organizer/base_organizer.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {{ block.super }} - Tag List
+    {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+    <h2>Tag List</h2>
+    {% if tag_list %}
+    <ul>
+        {% for tag in tag_list %}
+        <li><a href="{{ tag.get_absolute_url }}"> {{tag.name|title}} </a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <li><em>There is currently no tags available.</em></li>
+    {% endif %}
+    
+    {% endblock %}
+
+</body>
+</html>

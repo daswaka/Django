@@ -1,0 +1,25 @@
+{% extends parent_template|default:"organizer/base_organizer.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {{ block.super }} - Link News Article to Startup
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div>
+        <div>
+            <form action="{% url 'newslink_create' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Link Article</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

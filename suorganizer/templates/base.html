@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Startup Organizer
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'post_list' %}">Blog</a></li>
+            <li><a href="{% url 'startup_list' %}">Startups</a></li>
+            <li><a href="{% url 'tag_list' %}">Tags</a></li>
+        </ul>
+    </nav>
+    <div>
+        <header>
+            <h1>Startup Organizer</h1>
+        </header>
+        <main>
+            {% block content %}
+            Default content
+            {% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>
+            &copy; 2026
+            <a href="https://wuodrhoda.com/">Wuod Rhoda</a>
+        </p>
+        <p>
+            Created for
+            <a href="https://Django-Unleashed.com">Django Learning</a>
+        </p>
+    </footer>
+</body>
+</html>
